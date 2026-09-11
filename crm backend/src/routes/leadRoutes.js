@@ -1,6 +1,6 @@
 import express from "express";
 
-import Lead from "../models/lead.js";
+import Lead from "../models/Lead.js";
 
 import {
   getAll,
