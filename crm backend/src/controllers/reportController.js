@@ -3,7 +3,7 @@ import Property from "../models/Property.js";
 import Lead from "../models/Lead.js";
 import Appointment from "../models/Appointment.js";
 import Enquiry from "../models/Enquiry.js";
-import Sitevisit from "../models/Sitevisit.js";
+import Sitevisit from "../models/SiteVisit.js";
 export const dashboard = async (
   req,
   res
