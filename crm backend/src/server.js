@@ -24,7 +24,7 @@ import enquiryRoutes
   from "./routes/enquiryRoutes.js";
 
 import favoriteRoutes
-  from "./routes/favoriteRoutes.js";
+  from "./routes/FavoriteRoutes.js";
 
 import siteVisitsRoutes
   from "./routes/siteVisitsRoutes.js";
