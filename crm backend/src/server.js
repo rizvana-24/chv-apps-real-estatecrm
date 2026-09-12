@@ -111,9 +111,8 @@ app.use(
 
 app.use(
   "/api/site-visits",
+   siteVisitsRoutes);
 
-  SiteVisitRoutes
-);
 
 app.use(
   "/api/messages",
