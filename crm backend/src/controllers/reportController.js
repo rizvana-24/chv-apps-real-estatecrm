@@ -36,7 +36,7 @@ export const dashboard = async (
 
     Appointment.countDocuments(),
 
-    Enquiry.countDocuments(),
+    0,
 
     Sitevisit.countDocuments()
   ]);
