@@ -36,7 +36,7 @@ function Enquiries() {
       />
 
       <div className="grid gap-4 sm:grid-cols-3">
-        <Stat label="Total enquiries" value="14" delta="4 this month" />
+        <Stat label="Total enquiries" value="0" delta="0 this month" />
         <Stat label="Awaiting reply" value="1" delta="Avg. reply 12 min" />
         <Stat label="Visits booked" value="3" delta="From enquiries" />
       </div>
