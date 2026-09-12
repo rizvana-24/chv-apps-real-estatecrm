@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
@@ -37,10 +38,12 @@ import reportRoutes
   from "./routes/reportRoutes.js";
 
 dotenv.config();
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log("MongoDB Error:", err));
 
 const app = express();
 
-connectDB();
 
 app.use(
   cors({
