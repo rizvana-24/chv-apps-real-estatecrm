@@ -1,7 +1,6 @@
 import express from "express";
 
 import SiteVisit from "../models/SiteVisit.js";
-
 import {
   getAll,
   getOne,

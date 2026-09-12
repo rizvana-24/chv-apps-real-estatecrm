@@ -3,8 +3,7 @@ import Property from "../models/Property.js";
 import Lead from "../models/Lead.js";
 import Appointment from "../models/Appointment.js";
 import Enquiry from "../models/Enquiry.js";
-import SiteVisit from "../models/SiteVisit.js";
-
+import Sitevisit from "../models/Sitevisit.js";
 export const dashboard = async (
   req,
   res
@@ -39,7 +38,7 @@ export const dashboard = async (
 
     Enquiry.countDocuments(),
 
-    SiteVisit.countDocuments()
+    Sitevisit.countDocuments()
   ]);
 
   res.json({

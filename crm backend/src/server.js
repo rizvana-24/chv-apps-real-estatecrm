@@ -26,8 +26,9 @@ import enquiryRoutes
 import favoriteRoutes
   from "./routes/FavoriteRoutes.js";
 
-import siteVisitsRoutes
-  from "./routes/SiteVisitsRoutes.js";
+import siteVisitsRoutes 
+from "./routes/SiteVisitsRoutes.js";
+
 
 import messageRoutes
   from "./routes/messageRoutes.js";
@@ -110,7 +111,8 @@ app.use(
 
 app.use(
   "/api/site-visits",
-  siteVisitsRoutes
+
+  SiteVisitRoutes
 );
 
 app.use(
