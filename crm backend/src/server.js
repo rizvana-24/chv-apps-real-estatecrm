@@ -27,7 +27,7 @@ import favoriteRoutes
   from "./routes/FavoriteRoutes.js";
 
 import siteVisitsRoutes
-  from "./routes/siteVisitsRoutes.js";
+  from "./routes/SiteVisitsRoutes.js";
 
 import messageRoutes
   from "./routes/messageRoutes.js";
