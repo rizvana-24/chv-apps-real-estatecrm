@@ -11,6 +11,7 @@ export const dashboard = async (
 
   const [
     users,
+    admins,
     agents,
     customers,
     properties,
@@ -20,7 +21,11 @@ export const dashboard = async (
     visits
   ] = await Promise.all([
 
-    User.countDocuments(),
+     User.countDocuments(),
+
+    User.countDocuments({
+      role: "admin"
+  }),
 
     User.countDocuments({
       role: "agent"
@@ -36,13 +41,14 @@ export const dashboard = async (
 
     Appointment.countDocuments(),
 
-    0,
+    Enquiry.countDocuments(),
 
     Sitevisit.countDocuments()
   ]);
 
   res.json({
     users,
+    admins,
     agents,
     customers,
     properties,

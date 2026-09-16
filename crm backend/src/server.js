@@ -45,14 +45,22 @@ mongoose.connect(process.env.MONGO_URI)
 const app = express();
 
 
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  "http://localhost:8080"
+].filter(Boolean);
+
 app.use(
   cors({
-    origin:
-      process.env.CLIENT_URL ||
-      "http://localhost:8080"
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    }
   })
 );
-
 app.use(
   express.json()
 );

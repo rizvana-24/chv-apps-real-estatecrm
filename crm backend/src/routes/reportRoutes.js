@@ -15,11 +15,7 @@ const router = express.Router();
 router.get(
   "/dashboard",
   protect,
-  authorize(
-    "super-admin",
-    "admin",
-    "agent"
-  ),
+  authorize("super-admin"),
   dashboard
 );
 
