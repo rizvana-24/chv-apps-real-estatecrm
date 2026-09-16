@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/crm/AppShell";
 import { Badge, DataTable, PageHeader, Panel, Stat } from "@/components/crm/ui";
+import { apiGet } from "../api";
 
 export const Route = createFileRoute("/super-admin/")({
   head: () => ({
@@ -31,6 +33,19 @@ const ACTIVITY = [
 ];
 
 function SuperAdminDashboard() {
+  const [dashboard, setDashboard] = useState<any>(null);
+  useEffect(() => {
+  const loadDashboard = async () => {
+    try {
+      const data = await apiGet("/api/reports/dashboard");
+      setDashboard(data);
+    } catch (error) {
+      console.error("Dashboard data error:", error);
+    }
+  };
+
+  loadDashboard();
+}, []);
   return (
     <AppShell role="super-admin">
       <PageHeader
@@ -40,10 +55,14 @@ function SuperAdminDashboard() {
       />
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat label="Total admins" value="18" delta="+2 this quarter" />
-        <Stat label="All users" value="12,486" delta="+412 in 30 days" />
-        <Stat label="Uptime" value="99.98%" delta="2 incidents resolved" />
-        <Stat label="Storage" value="1.4 TB" delta="Media + documents" />
+        <Stat
+  label="Total admins"
+  value={dashboard?.admins ?? 0}
+  delta="+2 this quarter"
+/>
+        <Stat label="All users" value={dashboard?.users ?? 0} delta="+412 in 30 days" />
+        <Stat label="Uptime" value={dashboard?.uptime ?? "99.98%"} delta="2 incidents resolved" />
+        <Stat label="Storage" value={dashboard?.storage ?? "1.4 TB"} delta="Media + documents" />
       </div>
 
       <div className="mt-8 grid gap-5 xl:grid-cols-[2fr_1fr]">
