@@ -15,7 +15,7 @@ const user = await User.findOneAndUpdate(
     name: "Admin",
     email: "mohammadrizvana24@gmail.com",
     password: password,
-    role: "admin",
+    role: "super-admin",
     status: "Active"
   },
   {

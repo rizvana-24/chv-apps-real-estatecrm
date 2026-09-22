@@ -24,8 +24,11 @@ export const dashboard = async (
      User.countDocuments(),
 
     User.countDocuments({
-      role: "admin"
-  }),
+  role: {
+    $in: ["admin", "super-admin"]
+  }
+}),
+  
 
     User.countDocuments({
       role: "agent"
