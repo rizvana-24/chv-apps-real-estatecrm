@@ -55,15 +55,54 @@ function SuperAdminDashboard() {
       />
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat
-  label="Total admins"
-  value={dashboard?.admins ?? 0}
-  delta="+2 this quarter"
-/>
-        <Stat label="All users" value={dashboard?.users ?? 0} delta="+412 in 30 days" />
-        <Stat label="Uptime" value={dashboard?.uptime ?? "99.98%"} delta="2 incidents resolved" />
-        <Stat label="Storage" value={dashboard?.storage ?? "1.4 TB"} delta="Media + documents" />
-      </div>
+  <Stat
+    label="Total admins"
+    value={dashboard?.admins ?? 0}
+    delta="Live database"
+  />
+
+  <Stat
+    label="All users"
+    value={dashboard?.users ?? 0}
+    delta="Live database"
+  />
+
+  <Stat
+    label="Properties"
+    value={dashboard?.properties ?? 0}
+    delta="Live database"
+  />
+
+  <Stat
+    label="Leads"
+    value={dashboard?.leads ?? 0}
+    delta="Live database"
+  />
+
+  <Stat
+    label="Appointments"
+    value={dashboard?.appointments ?? 0}
+    delta="Live database"
+  />
+
+  <Stat
+    label="Enquiries"
+    value={dashboard?.enquiries ?? 0}
+    delta="Live database"
+  />
+
+  <Stat
+    label="Site Visits"
+    value={dashboard?.siteVisits ?? 0}
+    delta="Live database"
+  />
+
+  <Stat
+    label="Customers"
+    value={dashboard?.customers ?? 0}
+    delta="Live database"
+  />
+</div>
 
       <div className="mt-8 grid gap-5 xl:grid-cols-[2fr_1fr]">
         <Panel title="Quick access">
